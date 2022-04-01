@@ -7,21 +7,6 @@ public class InventoryCaseParent : MonoBehaviour
     private Image _caseDragged;
     private void Start()
     {
-        //Flexible Grid Set-Up
-        GetComponent<FlexibleLayoutGrid>().paddingHorizontal = Screen.width / (float)50;
-        int height = (int) (GetComponentInParent<RectTransform>().rect.height/5);
-        RectOffset rectangle = new RectOffset(height,height,height,height);
-        GetComponent<FlexibleLayoutGrid>().padding = rectangle;
-        GetComponent<FlexibleLayoutGrid>().enabled = false;
-
-        int compteur = 1;
-        foreach (Image child in GetComponentsInChildren<Image>())
-        {
-            compteur--;
-            if (compteur == 0)
-                child.color=Color.green;
-            
-        }
     }
 
     public void StartDragging(Image child)

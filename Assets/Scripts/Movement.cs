@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour
     public float speed;
     public float depth;
 
+    public bool _skipFrame;
+
     public GameObject inventory;
     public GameObject itemUsed;
     
@@ -37,9 +39,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") 
-            && !inventory.GetComponent<Inventory>().IsVectorOnInventory()
-            && !GameObject.Find("Inventory Case Parent").GetComponent<InventoryCaseParent>().IsCaseDragged())
+        if (Input.GetButtonDown("Fire1")
+            && !GameObject.Find("Content").GetComponent<InventoryCaseParent>().IsCaseDragged())
         {
             _mousePosition = Input.mousePosition;
             

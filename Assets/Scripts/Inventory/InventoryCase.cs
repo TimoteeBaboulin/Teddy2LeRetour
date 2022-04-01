@@ -33,6 +33,7 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+
         if (GetComponent<Image>().enabled == false)
             return;
         
@@ -60,7 +61,7 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
         }
         
         _dragged = false;
-        transform.SetParent(GameObject.Find("Inventory Case Parent").transform);
+        transform.SetParent(_parent.transform);
         _parent.StopDragging();
         GetComponent<RectTransform>().anchoredPosition = _basePosition;
         GetComponent<Image>().color = Color.white;
