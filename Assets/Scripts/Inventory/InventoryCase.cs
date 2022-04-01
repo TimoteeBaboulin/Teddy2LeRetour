@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
     private bool _dragged = false;
     
     public ClickHandler clickHandler;
-    public string name;
 
     private Vector2 _basePosition;
     private InventoryCaseParent _parent;
@@ -20,7 +20,6 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
         _parent = GetComponentInParent<InventoryCaseParent>();
         clickHandler = GameObject.Find("ClickHandler").GetComponent<ClickHandler>();
         _basePosition = GetComponent<RectTransform>().anchoredPosition;
-        name = GetComponent<Image>().sprite.name;
     }
 
     // Update is called once per frame
@@ -33,10 +32,6 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-
-        if (GetComponent<Image>().enabled == false)
-            return;
-        
         if (!_dragged)
             StartDragging();
         else
@@ -55,9 +50,10 @@ public class InventoryCase : MonoBehaviour, IPointerDownHandler
 
     public void StopDragging()
     {
-        if (clickHandler.ItemStopDragging())
+        Debug.Log(GetComponent<Image>().sprite.name);
+        if (clickHandler.ItemStopDragging(GetComponent<Image>().sprite.name))
         {
-            GetComponent<Image>().enabled = false;
+            Destroy(gameObject);
         }
         
         _dragged = false;

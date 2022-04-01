@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ItemPlace : MonoBehaviour
 {
+
     public string name;
     public bool consumeItem = false;
     public int itemCount = 999;
@@ -13,7 +14,7 @@ public class ItemPlace : MonoBehaviour
     public bool haveActive = false;
     public GameObject activeItem;
 
-    private bool itemOn = false;
+    public bool itemOn = false;
 
     public void SetSprite(Sprite sprite)
     {
@@ -30,9 +31,10 @@ public class ItemPlace : MonoBehaviour
         }
     }
 
-    public bool ClickWithItem(Sprite sprite)
+    public bool ClickWithItem(string name)
     {
-        if (sprite.name != name || itemOn)
+        
+        if (name != name || itemOn)
             return false;
         return true;
     }
@@ -46,7 +48,7 @@ public class ItemPlace : MonoBehaviour
 
     public Sprite ResetSprite()
     {
-        itemOn = !itemOn;
+        itemOn = false;
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         GetComponent<SpriteRenderer>().enabled = false;
         return sprite;

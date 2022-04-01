@@ -32,8 +32,7 @@ public class ClickHandler : MonoBehaviour
             if (!Input.GetButtonDown("Fire1") && player.GetComponent<Movement>().NavMeshAgentStopped())
             {
                 //Place l'objet
-                Sprite sprite = Resources.Load<Sprite>(_draggedItem);
-                SwapSprites(sprite);
+                _toPlace.SetSprite(Resources.Load<Sprite>(_draggedItem));
             }
         }
         
@@ -51,7 +50,7 @@ public class ClickHandler : MonoBehaviour
 
             if (space.GetComponent<ItemPlace>().ClickWithoutItem())
             {
-                SetInventorySprite(space.GetComponent<ItemPlace>().ResetSprite());
+                inventory.GetComponent<InventoryCaseParent>().AddCase(space.GetComponent<ItemPlace>().ResetSprite());
             }
         }
 
@@ -86,7 +85,7 @@ public class ClickHandler : MonoBehaviour
     }
 
     //Appele par la classe InventoryCase si on reclick pendant qu'elle est drag
-    public bool ItemStopDragging()
+    public bool ItemStopDragging(string name)
     {
         _skipFrame = true;
         Collider2D collider;
@@ -94,10 +93,10 @@ public class ClickHandler : MonoBehaviour
         {
             ItemPlace space = collider.GetComponent<ItemPlace>();
             
-            if (space.ClickWithItem(Resources.Load<Sprite>(_draggedItem)))
+            if (space.ClickWithItem(name))
             {
-
                 _toPlace = space;
+                _draggedItem = name;
 
                 return true;
             }
@@ -123,8 +122,6 @@ public class ClickHandler : MonoBehaviour
     //Place un objet dans l'inventaire
     private void SetInventorySprite(Sprite sprite)
     {
-        Image image = inventory.GetComponentInChildren<InventoryCaseParent>().GetFirstVoid();
-        image.enabled = true;
-        image.sprite = sprite;
+        inventory.GetComponent<InventoryCaseParent>().AddCase(sprite);
     }
 }

@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class InventoryCaseParent : MonoBehaviour
 {
+    public GameObject prefab;
+    
     private bool _isCaseDragged = false;
     private Image _caseDragged;
     private void Start()
@@ -40,5 +42,12 @@ public class InventoryCaseParent : MonoBehaviour
         }
 
         return null;
+    }
+
+    public GameObject AddCase(Sprite sprite)
+    {
+        GameObject newCase = Instantiate(prefab, transform);
+        newCase.GetComponent<Image>().sprite = sprite;
+        return newCase;
     }
 }
