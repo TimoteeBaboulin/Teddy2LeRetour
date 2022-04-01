@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 5047639186464297764}
   - component: {fileID: 5047639186464297786}
   - component: {fileID: 5047639186464297765}
-  - component: {fileID: 5047639186464297787}
-  - component: {fileID: 5047639186464297785}
-  - component: {fileID: 5047639186464297784}
+  - component: {fileID: -58808715515998245}
   m_Layer: 5
   m_Name: InventoryItem
   m_TagString: Untagged
@@ -78,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5047639186464297787
+--- !u!114 &-58808715515998245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,46 +85,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5047639186464297767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5eb04e154a270a448d926b193a525b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ac8765da02345d4a8c36708638b1afd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickHandler: {fileID: 0}
-  name: 
---- !u!223 &5047639186464297785
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5047639186464297767}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &5047639186464297784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5047639186464297767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  Icon: {fileID: 5047639186464297765}

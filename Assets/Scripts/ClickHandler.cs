@@ -29,7 +29,7 @@ public class ClickHandler : MonoBehaviour
                 _toPlace = null;
                 SetInventorySprite(Resources.Load<Sprite>(_draggedItem));
             }
-            if (!Input.GetButtonDown("Fire1") && player.GetComponent<Movement>().NavMeshAgentStopped())
+            if (!Input.GetButtonDown("Fire1") && player.GetComponent<Player>().NavMeshAgentStopped())
             {
                 //Place l'objet
                 _toPlace.SetSprite(Resources.Load<Sprite>(_draggedItem));

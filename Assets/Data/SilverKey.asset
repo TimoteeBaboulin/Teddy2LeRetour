@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac385ca22f8a44398a3c8b9d5b0b274c, type: 3}
+  m_Name: SilverKey
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 21300000, guid: 22dd68f50dfd42445abc28f79b9ac9ad, type: 3}
